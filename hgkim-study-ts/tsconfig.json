@@ -4,18 +4,18 @@
       "es5",
       "es6"
     ],
-    "jsx": "preserve",
     "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
-    "outDir": "./build",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "types": ["node", "jest", "jest-plugin-context"],
     "baseUrl": ".",
+    "paths": {
+      "@src/*": ["src/*"],
+      "@commons/*": ["src/commons/*"]
+    },
+    "types": ["node", "jest", "jest-plugin-context"],
     "typeRoots": ["./src/@types", "./node_modules/@types"],
     "skipLibCheck": true
   },
   "include": ["**/*.ts"],
-  "exclude": ["node_modules", "**/*.spec.ts", "**/*.test.ts"]
+  "exclude": ["node_modules", "**/*.spec.ts", "**/*.test.ts", "coverage", "__tests__"]
 }
