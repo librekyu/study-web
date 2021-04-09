@@ -1,7 +1,4 @@
-import A, { componentB, word } from './index.copy';
+import A, { componentB, word } from './index.copy.js';
 
 const asd = '';
 console.log(word);
-document.onload = function(){
-    alert("Hello World!!");
-}
