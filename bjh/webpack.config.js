@@ -1,12 +1,12 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/server.ts',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
-  mode: 'production' ,
+  mode: 'production',
   target: 'node',
   module: {
     rules: [
@@ -14,11 +14,11 @@ module.exports = {
         test: /\.js$/,
         use: 'babel-loader',
         exclude: /node_modules/,
-      }
+      },
     ],
   },
   resolve: {
-    modules: ['node_modules'] ,
-    extensions: ['.tsx', '.ts', '.js']
-  }
+    modules: ['node_modules'],
+    extensions: ['.tsx', '.ts', '.js'],
+  },
 };
