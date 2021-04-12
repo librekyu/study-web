@@ -1,0 +1,13 @@
+@offeringCode="OF2020121400000001"
+@installmentPeriod=2
+
+###
+# @name POST_BUYING
+POST {{$dotenv API_BASE_URI}}/buying HTTP/1.1
+Authorization: Bearer {{$dotenv USER_ACCESS_TOKEN}}
+Content-Type: application/json
+
+{
+  "offeringCode": {{offeringCode}},
+  "installmentPeriod": {{installmentPeriod}},
+}

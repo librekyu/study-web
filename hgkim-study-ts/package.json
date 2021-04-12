@@ -1,5 +1,5 @@
 {
-  "name": "jest.privacy-ts-node",
+  "name": "hgkim-study-ts",
   "version": "1.0.0",
   "description": "",
   "main": "./src/app.ts",
@@ -16,7 +16,9 @@
   "devDependencies": {
     "@babel/plugin-transform-runtime": "^7.13.10",
     "@babel/preset-typescript": "^7.13.0",
+    "@types/jest": "^26.0.22",
     "@types/jest-plugin-context": "^2.9.4",
+    "@types/node": "^14.14.37",
     "@typescript-eslint/eslint-plugin": "^3.10.1",
     "@typescript-eslint/parser": "^3.10.1",
     "babel-core": "^6.26.3",
