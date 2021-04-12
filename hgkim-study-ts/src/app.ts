@@ -25,9 +25,7 @@ const server = createServer(
         // 매칭되는 주소가 없으면
         response.statusCode = HTTP_STATUS_CODE.NotFound; // 404 상태 코드
         response.end('주소가 없습니다');
-        console.log(
-          'askjcnjksdncjksdnvjksdnjkvnsjkdncjksdncjknsdjkcnsdjkncjksdncjsndjkcnsjkdcnjksndcjksdnjk',
-        );
+        console.log('cherry-pick2');
       }
     }
   },
