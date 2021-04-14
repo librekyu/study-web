@@ -1,2 +1,3 @@
-console.log('테스트입니다.....');
-alert('타입스크립트!!');
+test('1 is 1', () => {
+  expect(1).toBe(1);
+});
