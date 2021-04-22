@@ -1,13 +1,12 @@
 module.exports = {
   moduleFileExtensions: ['js', 'json', 'jsx', 'ts', 'tsx', 'json'],
+  preset: 'ts-jest',
   transform: {
     '^.+\\.(js|jsx)?$': 'babel-jest',
   },
+  testEnvironment: 'node',
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
-    '\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
-      '<rootDir>/__mocks__/fileMock.js',
-    '\\.(css|less)$': '<rootDir>/__mocks__/fileMock.js',
   },
   testMatch: [
     '<rootDir>/**/*.test.(js|jsx|ts|tsx)',
