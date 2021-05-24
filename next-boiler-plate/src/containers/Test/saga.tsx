@@ -1,14 +1,19 @@
 import { all, call, fork, put, takeLatest } from 'redux-saga/effects';
 import { SagaIterator } from 'redux-saga';
 import { testAction } from './actions';
-import { LOAD_TEST } from './constants';
+import {
+  LOAD_TEST,
+  TEST_FAILURE,
+  TEST_REQUEST,
+  TEST_SUCCESS,
+} from './constants';
 import * as testApi from './api';
 
 import { SagaEffect } from '@src/utils/SagaUtils';
 import { testActions } from '@src/containers/Test/actions';
 
 function* test(action: testActions): SagaIterator {
-  yield put(testAction.request());
+  yield put({ type: TEST_REQUEST });
   try {
     const { data }: SagaEffect<typeof testApi.testApi> = yield call(
       testApi.testApi,
@@ -16,8 +21,9 @@ function* test(action: testActions): SagaIterator {
     );
 
     yield put(testAction.success(data));
+    yield put({ type: TEST_SUCCESS, payload: data });
   } catch (e) {
-    yield put(testAction.failure(e));
+    yield put({ type: TEST_FAILURE, payload: e });
   }
 }
 

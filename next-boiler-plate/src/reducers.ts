@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 import { HYDRATE } from 'next-redux-wrapper';
-import test from './containers/Test/reducer';
+import testReducer from './containers/Test/reducer';
 const combinedReducer = combineReducers({
-  auth: test,
+  testReducer,
 });
 
 const rootReducer = (state, action) => {

@@ -3,17 +3,11 @@ import { testActions } from './actions';
 import { TEST_REQUEST, TEST_SUCCESS, TEST_FAILURE } from './constants';
 
 export type TestState = {
-  testObject: {
-    id: number;
-    name: string;
-  };
+  testReduxObject: any;
 };
 
 export const initialState: TestState = {
-  testObject: {
-    id: -1,
-    name: '',
-  },
+  testReduxObject: {},
 };
 
 function testReducer(
@@ -26,6 +20,7 @@ function testReducer(
         break;
       }
       case TEST_SUCCESS: {
+        draft.testReduxObject = action.payload?.items[0];
         break;
       }
       case TEST_FAILURE: {
