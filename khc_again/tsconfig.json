@@ -15,7 +15,14 @@
     ],
     "target": "ES5",
     "outDir": "dist",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve"
   },
   "compileOnSave": true,
   "exclude": ["node_modules"],
