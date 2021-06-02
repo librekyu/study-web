@@ -6,9 +6,11 @@ module.exports = {
         modules: false,
         useBuiltIns: "usage",
         targets: "> 0.25%, not dead",
+        corejs: 3,
       },
-      "@babel/preset-typescript",
     ],
+    "@babel/preset-react",
+    "@babel/preset-typescript",
   ],
   // plugins: []
 };
