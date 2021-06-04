@@ -5,35 +5,33 @@ import styled from '@commons/style/themes/styled';
 import { RootState } from '@src/reducers';
 import { LOAD_TEST } from '@src/containers/Test/constants';
 import { khcTestApi } from '@src/containers/Test/api';
-import { GetFirstMovieList } from '@src/components/movieList';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import { rootReducers } from '@src/redux/movReducer';
-import { Buttons } from '@src/components/swapButtons';
-import store from '@src/redux/movStore';
 
 const IndexPage = (): JSX.Element => {
   const router = useRouter();
+
+  const [ids, setIds] = useState('');
   const [page, setPage] = useState(1);
 
+  khcTestApi().then((res) => {
+    const movie = res.data.boxOfficeResult.weeklyBoxOfficeList;
+    const movieList = movie.map((item) => item.movieNm).toString();
+    setIds(movieList);
+  });
   return (
     <>
-      <Provider store={store}>
-        <div>
-          <h1>api 응답 값</h1> <br />
-          <GetFirstMovieList></GetFirstMovieList>
-        </div>
+      <div>
+        <h1>api 응답 값</h1> <br />
+        {ids}
+      </div>
 
-        <ButtonStyle
-          onClick={() => {
-            setPage(page == 1 ? page + 1 : page - 1);
-            router.push('/');
-          }}
-        >
-          {page}
-        </ButtonStyle>
-        <Buttons></Buttons>
-      </Provider>
+      <ButtonStyle
+        onClick={() => {
+          setPage(page == 1 ? page + 1 : page - 1);
+          router.push('/');
+        }}
+      >
+        {page}
+      </ButtonStyle>
     </>
   );
 };
