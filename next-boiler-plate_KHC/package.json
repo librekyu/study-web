@@ -56,6 +56,7 @@
     "@babel/preset-react": "^7.12.7",
     "@commitlint/cli": "^9.1.1",
     "@commitlint/config-conventional": "^9.1.1",
+    "@slack/web-api": "^6.2.4",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@types/jest": "^26.0.9",
@@ -77,6 +78,7 @@
     "jest-plugin-context": "^2.9.0",
     "prettier": "^2.0.5",
     "react-test-renderer": "^16.13.1",
+    "slack-node": "^0.1.8",
     "ts-jest": "^26.2.0",
     "typescript": "^3.9.6"
   }
