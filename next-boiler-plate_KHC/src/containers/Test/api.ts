@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { ApiRequest } from '../../utils/AxiosUtils';
-import { useSelector } from 'react-redux';
 
 export const testApi: ApiRequest<null, any> = () => {
   return axios.get(
@@ -9,17 +8,10 @@ export const testApi: ApiRequest<null, any> = () => {
 };
 
 export const khcTestApi: ApiRequest<null, any> = () => {
-  const { value } = useSelector((state) => state.value);
-
   const apiKey = '4e6e24144f040b5a1e6795b154b8b3df';
   const requestUrl =
     'http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/';
-  let val;
-  if (value === 0) {
-    val = 'searchWeeklyBoxOfficeList.json';
-  } else if (value === 1) {
-    val = 'searchDailyBoxOfficeList.json';
-  }
+  const val = 'searchWeeklyBoxOfficeList';
   const request =
     requestUrl + val + '?key=' + apiKey + '&targetDt=' + '20120101';
   return axios.get(request);
