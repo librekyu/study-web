@@ -5,29 +5,18 @@ import styled from '@commons/style/themes/styled';
 import { RootState } from '@src/reducers';
 import { LOAD_TEST } from '@src/containers/Test/constants';
 import { khcTestApi } from '@src/containers/Test/api';
-import Mov from './Mov';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import { Buttons } from '@src/components/swapButtons';
 
-const IndexPage = (): JSX.Element => {
+const Header = () => {
   return (
     <>
       <div>
-        <h1>api 응답 값</h1> <br />
-        <Mov results={{}} />
+        <b>header</b>
       </div>
     </>
   );
 };
 
-const ContainerStyle = styled.div`
-  padding: 30px;
-  background-color: #fff;
-  display: flex;
-  justify-content: space-around;
-`;
-
-const ButtonStyle = styled.button`
-  background-color: #00d094;
-  padding: 10px 20px;
-`;
-
-export default IndexPage;
+export default Header;

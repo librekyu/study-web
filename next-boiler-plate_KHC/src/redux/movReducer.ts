@@ -1,7 +1,10 @@
-import { MOV_STATE } from '@src/redux/movState';
 import { combineReducers } from 'redux';
 
-export const movReducer = (state = MOV_STATE, action) => {
+const MOV_STATE = {
+  value: 0,
+};
+
+const movReducer = (state = MOV_STATE, action) => {
   switch (action.type) {
     case 'MOV_DAILY': {
       return {
@@ -20,6 +23,4 @@ export const movReducer = (state = MOV_STATE, action) => {
   }
 };
 
-export const rootReducers = combineReducers({
-  value: movReducer,
-});
+export default movReducer;

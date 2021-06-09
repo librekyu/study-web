@@ -1,14 +1,14 @@
-export const MOV_DAILY = 'MOV_DAILY';
-export const MOV_WEEKLY = 'MOV_WEEKLY';
+export const KAKAO = 'KAKAO';
+export const TVING = 'TVING';
 
-export const daily = () => {
+export const kakao = () => {
   return {
-    type: 'MOV_DAILY',
+    type: 'KAKAO',
   };
 };
 
-export const weekly = () => {
+export const tving = () => {
   return {
-    type: 'MOV_WEEKLY',
+    type: 'TVING',
   };
 };

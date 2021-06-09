@@ -38,7 +38,9 @@ function App({ Component, pageProps }: AppProps) {
       </Head>
       <ThemeProvider theme={defaultTheme}>
         <GlobalStyles />
+        <div>qweqweqwe</div>
         <Component {...props} />
+        <div>qwkmd nkmdansjkd</div>
       </ThemeProvider>
     </>
   );

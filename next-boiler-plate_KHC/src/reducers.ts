@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 import { HYDRATE } from 'next-redux-wrapper';
 import testReducer from './containers/Test/reducer';
+import movReducer from './redux/movReducer';
 const combinedReducer = combineReducers({
   testReducer,
+  movReducer,
 });
 
 const rootReducer = (state, action) => {
