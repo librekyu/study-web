@@ -1,6 +1,6 @@
 const { WebClient, LogLevel } = require('@slack/web-api');
 const client = new WebClient(
-  'xoxb-692633197331-2129812001286-sN7cHDeCGm1opd7BaKotPWi5',
+  'xoxb-692633197331-2129812001286-0bYKE9181aZXXM4iDFxlVF3N',
   {
     // LogLevel can be imported and used to make debugging simpler
     logLevel: LogLevel.DEBUG,
@@ -16,7 +16,7 @@ const send = async (message) => {
       channel: channelId,
     });
   } catch (error) {
-    console.error(error);
+    // console.error(error);
   }
 };
 

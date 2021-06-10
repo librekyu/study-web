@@ -29,4 +29,8 @@ module.exports = {
     'react/react-in-jsx-scope': 0,
     '@typescript-eslint/no-var-requires': 'off',
   },
+  'react/prop-types': [
+    'enabled',
+    { ignore: 'ignore', customValidators: 'customValidator' },
+  ],
 };
