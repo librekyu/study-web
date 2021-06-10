@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-const User = ({ user, onRemove, onToggle }) => {
+const User = React.memo(({ user, onRemove, onToggle }) => {
   useEffect(() => {
     console.log('user값이 설정됨');
     console.log(user);
@@ -24,7 +24,7 @@ const User = ({ user, onRemove, onToggle }) => {
       <button onClick={() => onRemove(user.id)}>삭제</button>
     </div>
   );
-};
+});
 
 const UserList = ({ users, onRemove, onToggle }) => {
   return (

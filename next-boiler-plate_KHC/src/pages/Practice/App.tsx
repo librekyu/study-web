@@ -1,4 +1,4 @@
-import React, { useRef, useState, useMemo } from 'react';
+import React, { useRef, useState, useMemo, useCallback } from 'react';
 import Hello from './Hello';
 import Wrapper from './Wrapper';
 import Counter from './Counter';
@@ -24,14 +24,14 @@ const App = () => {
 
   const { username, email } = inputs; // input 값에 username, email을 넣어줌
 
-  const onChange = (e) => {
+  const onChange = useCallback((e) => {
     //input 값이 변할때 state값 갱신
     const { name, value } = e.target;
-    setInputs({
+    setInputs((inputs) => ({
       ...inputs,
       [name]: value,
-    });
-  };
+    }));
+  }, []);
 
   const style = {
     backgroundColor: 'black',
@@ -58,27 +58,30 @@ const App = () => {
       active: false,
     },
   ]);
-  const onCreate = () => {
+  const onCreate = useCallback(() => {
     //onChange에서 갱신받은 state를 여기서 사용
     const user = {
       id: nextId.current,
       username,
       email,
     };
-    setUsers(users.concat(user));
+    setUsers((users) => users.concat(user));
     //onCreate 함수로 input 값 초기화, nextId ref값 1 증가
     setInputs({
       username: '',
       email: '',
     });
     nextId.current += 1;
-  };
+  }, [username, users, email]);
 
-  const onRemove = (id) => {
-    //user.id 가 파라미터와 일치하지 않는 원소만 추출해서 배열을 만듬
-    // = user.id 가 id 인것만 제거함
-    setUsers(users.filter((user) => user.id !== id));
-  };
+  const onRemove = useCallback(
+    (id) => {
+      //user.id 가 파라미터와 일치하지 않는 원소만 추출해서 배열을 만듬
+      // = user.id 가 id 인것만 제거함
+      setUsers((users) => users.filter((user) => user.id !== id));
+    },
+    [users],
+  );
 
   const onToggle = (id) => {
     setUsers(
