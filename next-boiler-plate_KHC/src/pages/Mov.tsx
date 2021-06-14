@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react';
 import { useRouter } from 'next/router';
 import styled from '@commons/style/themes/styled';
 
-const Mov = ({ results }) => {
+const Mov = ({ results }: { results: string[] }) => {
   const router = useRouter();
 
   return (
@@ -11,12 +11,8 @@ const Mov = ({ results }) => {
         <br />
         <h1>예매 순위</h1>
         <br />
-        {results.map((r, index) => (
-          <div key={index}>
-            <h3>
-              {index + 1}위 - {r.movieId} - {r.titleKorean}
-            </h3>
-          </div>
+        {results?.map((r, index) => (
+          <div key={index}>{r}</div>
         ))}
         <br />
         <ButtonStyle
@@ -30,19 +26,6 @@ const Mov = ({ results }) => {
     </>
   );
 };
-
-export const getServerSideProps = async (context) => {
-  const res = await fetch(`https://movie.daum.net/api/common/reservation/rank`);
-  const json = await res.json();
-  const movies = json;
-  return {
-    props: {
-      results: movies,
-    },
-  };
-};
-
-Mov.defaultProps = {};
 
 const ButtonStyle = styled.button`
   background-color: #00d094;
