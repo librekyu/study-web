@@ -66,7 +66,7 @@ const App = () => {
     return users.filter((user) => user.active).length;
   };
 
-  const [{ username, email }, onChange] = useInputs({
+  const [{ username, email }, onChange, reset] = useInputs({
     username: '',
     email: '',
   });
@@ -84,8 +84,9 @@ const App = () => {
         email,
       },
     });
+    reset();
     nextId.current += 1;
-  }, [username, email]);
+  }, [username, email, reset]);
 
   const onToggle = useCallback((id) => {
     dispatch({
