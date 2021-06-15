@@ -5,17 +5,28 @@ import styled from '@commons/style/themes/styled';
 import { RootState } from '@src/reducers';
 import { LOAD_TEST } from '@src/containers/Test/constants';
 import { khcTestApi } from '@src/containers/Test/api';
-import Mov from './Mov';
+import Mov from '../components/Mov';
 
-const IndexPage = (): JSX.Element => {
+const IndexPage = ({ results }): JSX.Element => {
   return (
     <>
       <div>
         <h1>api 응답 값</h1> <br />
-        <Mov results={['qwe', 'zxc']} />
+        <Mov results={results} />
       </div>
     </>
   );
+};
+
+export const getServerSideProps = async (context) => {
+  const res = await fetch(`https://movie.daum.net/api/common/reservation/rank`);
+  const json = await res.json();
+  const movies = json;
+  return {
+    props: {
+      results: movies,
+    },
+  };
 };
 
 const ContainerStyle = styled.div`

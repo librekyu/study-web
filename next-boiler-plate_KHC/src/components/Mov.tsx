@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react';
 import { useRouter } from 'next/router';
 import styled from '@commons/style/themes/styled';
 
-const Mov = ({ results }: { results: string[] }) => {
+const Mov = ({ results }) => {
   const router = useRouter();
 
   return (
@@ -11,8 +11,10 @@ const Mov = ({ results }: { results: string[] }) => {
         <br />
         <h1>예매 순위</h1>
         <br />
-        {results?.map((r, index) => (
-          <div key={index}>{r}</div>
+        {results?.map((result, index) => (
+          <div key={index}>
+            {index + 1} 위 : {result.titleKorean}
+          </div>
         ))}
         <br />
         <ButtonStyle
