@@ -5,13 +5,13 @@ import React, {
   useCallback,
   useReducer,
 } from 'react';
-import useInputs from './Hooks/useInputs';
-import Hello from './Hello';
-import Wrapper from './Wrapper';
-import Counter from './Counter';
-import InputSample from './InputSample';
-import UserList from './UserList';
-import CreateUser from './CreateUser';
+import useInputs from '../../utils/hooks/useInputs';
+import Hello from './components/Hello';
+import Wrapper from './components/Wrapper';
+import Counter from '../../components/Counter';
+import InputSample from './components/InputSample';
+import UserList from './components/UserList';
+import CreateUser from './components/CreateUser';
 import { setUseProxies } from 'immer';
 import { userInfo } from 'os';
 
