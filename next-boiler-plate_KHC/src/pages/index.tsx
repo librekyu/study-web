@@ -12,7 +12,7 @@ const IndexPage = (): JSX.Element => {
     <>
       <div>
         <h1>api 응답 값</h1> <br />
-        <Mov results={{}} />
+        <Mov results={['qwe', 'zxc']} />
       </div>
     </>
   );
