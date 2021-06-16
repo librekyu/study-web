@@ -5,11 +5,12 @@ import { ThemeProvider } from 'emotion-theming';
 import wrapper from '../store';
 import defaultTheme from '../commons/style/themes/defaults';
 import GlobalStyles from '../commons/style/global';
-
 /** External Plugin Css Inject */
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import 'normalize.css';
+/* 헤더 css */
+import 'src/commons/style/css/header/header.css';
 
 import 'core-js/modules/es.array.unscopables.flat';
 import 'core-js/modules/es.array.unscopables.flat-map';
@@ -38,9 +39,7 @@ function App({ Component, pageProps }: AppProps) {
       </Head>
       <ThemeProvider theme={defaultTheme}>
         <GlobalStyles />
-        <div>qweqweqwe</div>
         <Component {...props} />
-        <div>qwkmd nkmdansjkd</div>
       </ThemeProvider>
     </>
   );
