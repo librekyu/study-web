@@ -8,17 +8,17 @@ export default class SimpleSlider extends Component {
   Slide1 = styled.div`
     background: #b359c5;
     width: 100%;
-    height: 350px;
+    height: 550px;
   `;
   Slide2 = styled.div`
     background: orange;
     width: 100%;
-    height: 350px;
+    height: 550px;
   `;
   Slide3 = styled.div`
     background: #00ffd581;
     width: 100%;
-    height: 350px;
+    height: 550px;
   `;
 
   render() {
@@ -28,6 +28,8 @@ export default class SimpleSlider extends Component {
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 250,
     };
     return (
       <div>

@@ -5,18 +5,26 @@ import HeaderLeftSide from './headerComp/headerLeftSide';
 
 const Header = (): JSX.Element => {
   return (
-    <HeaderContainer>
-      <HeaderLeftSide />
-      <HeaderRightSide />
-    </HeaderContainer>
+    <Hbody>
+      <HeaderContainer>
+        <HeaderLeftSide />
+        <HeaderRightSide />
+      </HeaderContainer>
+    </Hbody>
   );
 };
-const HeaderContainer = styled.div`
-  background-color: white;
+
+const Hbody = styled.div`
   position: fixed;
   z-index: 999;
+  display: flex;
+  justify-content: center;
   width: 100%;
-  margin-bottom: 96px;
+  background-color: white;
+`;
+const HeaderContainer = styled.div`
+  background-color: white;
+  width: 1440px;
   padding-left: 120px;
   padding-right: 120px;
   /* border: 2px solid greenyellow; */
@@ -25,4 +33,5 @@ const HeaderContainer = styled.div`
   vertical-align: center;
   align-items: center;
 `;
+
 export default Header;
