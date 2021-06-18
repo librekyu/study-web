@@ -2,6 +2,12 @@ import React from 'react';
 import styled from '@src/commons/style/themes/styled';
 
 const RightCont = () => {
+
+    const style={
+        width : '241px',
+        height : '228px'
+    }
+
     return (
         <>
           <Cont>
@@ -14,10 +20,20 @@ const RightCont = () => {
             <SeeDetails>
                 자세히보기 >
             </SeeDetails>
+            <CharIcons><img style={style} src = 'http://beaverblock.com/images/index/Character2.png'/></CharIcons>
           </Cont>
         </>
       );
     };
+
+    const CharIcons = styled.span`
+    display : inline-block;
+    position : relative;
+    bottom : 85px;
+    left:280px;
+    width : 250px;
+    height : 250px;
+    `
     
     const Title = styled.div`
       font-weight: 800;

@@ -9,6 +9,11 @@ const LeftCont = () => {
     setClick('clicked');
     };
 
+    const style={
+        width : '241px',
+        height : '228px'
+    }
+
   return (
     <>
       <Cont>
@@ -21,6 +26,7 @@ const LeftCont = () => {
         <SeeDetails onClick={onDetailClick}>
             자세히보기 >
         </SeeDetails>
+        <CharIcons><img style={style} src = 'http://beaverblock.com/images/index/Lua-Icon.png'/></CharIcons>
       </Cont>
     </>
   );
@@ -54,6 +60,15 @@ const SeeDetails = styled.div`
     
 
 `;
+
+const CharIcons = styled.span`
+ display : inline-block;
+ position : relative;
+ bottom : 85px;
+ left:280px;
+ width : 250px;
+ height : 250px;
+`
 
 const Cont = styled.span`
   display: inline-block;
