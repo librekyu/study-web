@@ -10,7 +10,10 @@ import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import 'normalize.css';
 /* 헤더 css */
-import 'src/commons/style/css/header/header.css';
+import 'src/commons/style/css/header.css';
+
+/* carousel custom css */
+import '@src/commons/style/css/carousel.css';
 
 import 'core-js/modules/es.array.unscopables.flat';
 import 'core-js/modules/es.array.unscopables.flat-map';
