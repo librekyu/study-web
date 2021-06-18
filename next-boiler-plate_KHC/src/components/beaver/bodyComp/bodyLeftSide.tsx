@@ -1,7 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from '@src/commons/style/themes/styled';
 
 const LeftCont = () => {
+    const [click, setClick] = useState('none');
+
+    const onDetailClick = () => {
+    alert(click);
+    setClick('clicked');
+    };
+
   return (
     <>
       <Cont>
@@ -11,7 +18,7 @@ const LeftCont = () => {
           <br />
           알맞는 콘텐츠를 찾아보세요.
         </Sub>
-        <SeeDetails>
+        <SeeDetails onClick={onDetailClick}>
             자세히보기 >
         </SeeDetails>
       </Cont>
