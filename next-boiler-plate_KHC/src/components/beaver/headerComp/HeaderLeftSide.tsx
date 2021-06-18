@@ -33,7 +33,7 @@ const ExpButton = styled.span`
   border-radius: 50px;
   line-height: 40px;
   color: #ff6059;
-  padding: 5px 16px;
+  padding: 6px 20px;
   font-weight: 600;
   align-self: default;
   &:hover {

@@ -74,7 +74,9 @@
     "jest": "^26.4.0",
     "jest-plugin-context": "^2.9.0",
     "prettier": "^2.0.5",
+    "react-slick": "^0.28.1",
     "react-test-renderer": "^16.13.1",
+    "slick-carousel": "^1.8.1",
     "ts-jest": "^26.2.0",
     "typescript": "^4.3.2"
   }

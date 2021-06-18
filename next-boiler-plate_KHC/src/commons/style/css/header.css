@@ -19,6 +19,11 @@
   line-height: 96px;
   vertical-align: middle;
 }
+
+.leftHead > ul > li:hover {
+  cursor: pointer;
+}
+
 .rightHover > span {
   font-size: 18px;
   color: gray;
