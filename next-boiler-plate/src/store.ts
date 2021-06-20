@@ -24,7 +24,7 @@ const bindMiddleware = (middlewares: Middleware[]): StoreEnhancer => {
     : composeWithDevTools(applyMiddlewares);
 };
 
-const makeStore: MakeStore<RootState> = (context: Context) => {
+const makeStore = (context: Context) => {
   const sagaMiddleware = createSagaMiddleware();
   const store: SagaStore = createStore(
     reducer,
@@ -34,7 +34,7 @@ const makeStore: MakeStore<RootState> = (context: Context) => {
   return store;
 };
 
-const wrapper = createWrapper<RootState>(makeStore, {
+const wrapper = createWrapper(makeStore, {
   debug: process.env.NODE_ENV === 'development',
 });
 
